@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+{% load static %}
+
+{% url 'eifapp:homepage' as homeurl %}
+{% url 'eifapp:about-us' as abouturl %}
+{% url 'eifapp:contact-us' as contacturl %}
+{% url 'eifapp:sermons' as sermonsurl %}
+{% url 'eifapp:devotionals' as devotionalsurl %}
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- <link rel="icon" href="%PUBLIC_URL%/favicon.ico" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+
+
+		<link href="/static/fonts/novecento-font/novecento-font.css" rel="stylesheet" type="text/css">
+		<link href="/static/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+		<link rel="stylesheet" href="/static/css/style.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+
+
+    <title>Endtime</title>
+  </head>
+  <body>
+    <div class="site-content">
+      <header class="site-header">
+          <div class="container">
+            <a href="#" class="branding">
+              <img src="/static/images/logo.png" alt="" class="logo"/>
+              <h1 class="site-title">Endtime Intercessors  Fellowship</h1>
+            </a>
+
+            <div class="main-navigation">
+              <button class="menu-toggle"><i class="fa fa-bars"></i> Menu</button>
+              <ul class="menu">
+                <li class='menu-item {% if request.path == homeurl %}current-menu-item{% endif %}'><a href="{% url 'eifapp:homepage' %}">Homepage <small></small></a></li>
+                <li class='menu-item {% if request.path == abouturl %}current-menu-item{% endif %}'><a href="{% url 'eifapp:about-us' %}">About us <small></small></a></li>
+                <li class='menu-item {% if request.path == sermonsurl %}current-menu-item{% endif %}'><a href="{% url 'eifapp:sermons' %}">Seremons <small></small></a></li>
+              <!-- {/*<li class='menu-item current-menu-item menu-item'><a href="events.html">Events <small>Sunt in culpa</small></a></li>*/} -->
+                <li class='menu-item {% if request.path == devotionalsurl %}current-menu-item{% endif %}'><a href="{% url 'eifapp:devotionals' %}">Devotionals <small></small></a></li>
+                <li class='menu-item {% if request.path == contacturl %}current-menu-item{% endif %}'><a href="{% url 'eifapp:contact-us' %}">Contact <small></small></a></li>
+              </ul>
+            </div>
+
+            <div class="mobile-navigation"></div>
+          </div>
+        </header>
+
+        {% block home %}
+        {% endblock %}
+
+        {% block contact %}
+        {% endblock %}
+
+        {% block about %}
+        {% endblock %}
+
+        {% block devotionals %}
+        {% endblock %}
+
+        {% block sermons %}
+        {% endblock %}
+
+          <footer class="site-footer">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="widget">
+                    <h3 class="widget-title">Our address</h3>
+                    <!-- {/*<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi perspiciatis magnam, ab ipsa laboriosam tempore tenetur, aliquid repellat, ex cum dicta reiciendis accusamus. Omnis repudiandae quasi mollitia, iusto odio dignissimos.</p>*/} -->
+                    <p>
+                      <div class="mapouter">
+                        <div class="gmap_canvas">
+                          <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=%20%20Kumasi&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                          <a href="https://putlocker-is.org">putlocker</a>
+                          <br/>
+                            <a href="https://www.embedgooglemap.net">google map for web</a>
+                          </div>
+                        </div>
+                    </p>
+                    <ul class="address">
+                      <li><i class="fa fa-map-marker"></i> 329 attr St, Kumasi,  75042</li>
+                      <li><i class="fa fa-phone"></i> (233) 853 442 552</li>
+                      <li><i class="fa fa-envelope"></i> info@endtimeintercessors.com</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="widget">
+                    <h3 class="widget-title">Topics from the eschatology</h3>
+                    <ul class="bullet">
+                      <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+                      <li><a href="#">Consectetur adipisicing elit quis nostrud</a></li>
+                      <li><a href="#">Eiusmod tempor incididunt ut labore et dolore magna</a></li>
+                      <li><a href="#">Ut enim ad minim veniam cillum</a></li>
+                      <li><a href="#">Exercitation ullamco laboris nisi ut aliquip</a></li>
+                      <li><a href="#">Duis aute irure dolor in reprehenderit in voluptate</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="widget">
+                    <h3 class="widget-title">Contact form</h3>
+                    <form action="#" class="contact-form">
+                      <div class="row">
+                        <div class="col-md-6"><input type="text" placeholder="Your name..."/></div>
+                        <div class="col-md-6"><input type="text" placeholder="Email..."/></div>
+                      </div>
+
+                      <textarea name="" placeholder="Your message..."></textarea>
+                      <div class="text-right"><input type="submit" value="Send message"/></div>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+            <p class="colophon">Copyright 2022 Endtime Intercessors Fellowship</p>
+          </div>
+        </footer>
+    </div>
+
+    <script src="/static/js/jquery-1.11.1.min.js"></script>
+    <!-- <script src="%PUBLIC_URL%/js/jquery-1.11.1.min.map"></script> -->
+		<script src="/static/js/plugins.js"></script>
+		<script src="/static/js/app.js"></script>
+
+  </body>
+</html>
